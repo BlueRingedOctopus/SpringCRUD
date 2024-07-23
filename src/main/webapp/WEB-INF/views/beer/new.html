@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New Beer</title>
+</head>
+<body>
+
+<form th:method="POST" th:action="@{/beer}" th:object="${beer}">
+    <label for="beerTitle">Enter name: </label>
+    <input type="text" th:field="*{beerTitle}" id="beerTitle"/>
+    <div style="color:red" th:if="${#fields.hasErrors('beerTitle')}" th:errors="*{beerTitle}">Name Error</div>
+    <br/>
+    <label for="beerStyle">Enter style: </label>
+    <input type="text" th:field="*{beerStyle}" id="beerStyle"/>
+    <div style="color:red" th:if="${#fields.hasErrors('beerStyle')}" th:errors="*{beerStyle}">Beer style Error</div>
+    <br/>
+    <label for="brewery">Enter brewery: </label>
+    <input type="text" th:field="*{brewery}" id="brewery"/>
+    <div style="color:red" th:if="${#fields.hasErrors('brewery')}" th:errors="*{brewery}">Brewery name Error</div>
+    <br/>
+    <label for="abv">Enter ABV: </label>
+    <input type="text" th:field="*{abv}" id="abv"/>
+    <div style="color:red" th:if="${#fields.hasErrors('abv')}" th:errors="*{abv}">Abv Error</div>
+    <br/>
+    <input type="submit" value="Create!"/>
+</form>
+
+</body>
+</html>

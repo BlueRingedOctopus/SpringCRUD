@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Show</title>
+</head>
+<body>
+<p th:text="${beer.getBeerTitle() + ', ' + beer.getAbv() + '%'}">VALUE</p>
+<p th:text="${'Brewery: ' + beer.getBrewery()}">VALUE</p>
+<p th:text="${'Style: ' + beer.getBeerStyle()}">VALUE</p>
+<p th:text="${beer.getBeerId()}">VALUE</p>
+
+<a th:href="@{/beer/{beerid}/edit(beerid=${beer.getBeerId()})}">Edit</a>
+
+<form th:method="DELETE" th:action="@{/beer/{beerid}(beerid=${beer.getBeerId()})}">
+    <input type="submit" value="Delete"/>
+</form>
+</body>
+</html>

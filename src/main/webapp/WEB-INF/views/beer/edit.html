@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update person</title>
+</head>
+<body>
+
+<form th:method="PATCH" th:action="@{/beer/{beerid}(beerid=${beer.getBeerId()})}" th:object="${beer}">
+    <label for="beertitle">Enter name: </label>
+    <input type="text" th:field="*{beerTitle}" id="beertitle"/>
+    <div style="color:red" th:if="${#fields.hasErrors('beerTitle')}" th:errors="*{beerTitle}">Name Error</div>
+    <br/>
+    <label for="beerStyle">Enter style: </label>
+    <input type="text" th:field="*{beerStyle}" id="beerStyle"/>
+    <div style="color:red" th:if="${#fields.hasErrors('beerStyle')}" th:errors="*{beerStyle}">Age Error</div>
+    <br/>
+    <label for="brewery">Enter brewery: </label>
+    <input type="text" th:field="*{brewery}" id="brewery"/>
+    <div style="color:red" th:if="${#fields.hasErrors('brewery')}" th:errors="*{brewery}">Age Error</div>
+    <br/>
+    <label for="abv">Enter ABV: </label>
+    <input type="text" th:field="*{abv}" id="abv"/>
+    <div style="color:red" th:if="${#fields.hasErrors('abv')}" th:errors="*{abv}">Email Error</div>
+    <br/>
+    <input type="submit" value="Update!"/>
+</form>
+
+</body>
+</html>

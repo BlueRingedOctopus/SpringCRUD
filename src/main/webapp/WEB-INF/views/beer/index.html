@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+
+<div th:each="beer : ${beer}">
+    <a th:href="@{/beer/{beerid}(beerid=${beer.getBeerId()})}"
+     th:text="${beer.getBeerTitle() + ', ' +beer.getBeerStyle() + ', ' + beer.getAbv()}">beer</a>
+</div>
+
+<br/>
+<hr/>
+
+<a href="/beer/new">Add new beer</a>
+
+</body>
+</html>
