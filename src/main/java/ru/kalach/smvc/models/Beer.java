@@ -20,6 +20,8 @@ public class Beer {
     @Min(value = 0, message = "Abv should be greater than 0")
     private double abv;
 
+    // Пустой конструктор нужен спрингу для работы
+
     public Beer() {
 
     };
