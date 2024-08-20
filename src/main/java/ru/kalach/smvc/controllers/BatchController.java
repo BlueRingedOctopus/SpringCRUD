@@ -22,15 +22,15 @@ public class BatchController {
         return "batch/index";
     }
 
-    @GetMapping("/without")
-    public String withoutBatch() {
-        beerDAO.testMultipleUpdate();
-        return "redirect:/beer";
-    }
-
-    @GetMapping("/with")
-    public String withBatch() {
-        beerDAO.testBatchUpdate();
-        return "redirect:/beer";
-    }
+//    @GetMapping("/without")
+//    public String withoutBatch() {
+//        beerDAO.testMultipleUpdate();
+//        return "redirect:/beer";
+//    }
+//
+//    @GetMapping("/with")
+//    public String withBatch() {
+//        beerDAO.testBatchUpdate();
+//        return "redirect:/beer";
+//    }
 }
